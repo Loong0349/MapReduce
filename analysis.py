@@ -2,7 +2,6 @@ import os
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-# Function to read word count data from files
 def read_word_count_files(folder_path):
     word_counts = {}
     for filename in os.listdir(folder_path):
@@ -14,7 +13,6 @@ def read_word_count_files(folder_path):
                 word_counts[year][word] = int(count)
     return word_counts
 
-# Function to generate word cloud for a given year and save it to an image file
 def generate_word_cloud(word_count, year):
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(word_count)
     plt.figure(figsize=(10, 5))
@@ -25,17 +23,15 @@ def generate_word_cloud(word_count, year):
     plt.close()
 
 # Folder path containing word count files
-folder_path = '/home/hadoop/workspace/Headline/output'
+folder_path = 'Headline/output'
 
-# Read word count data from files
 word_counts = read_word_count_files(folder_path)
 
-# Word count analysis
 for year, word_count in word_counts.items():
     print(f"Year: {year}")
     total_words = sum(word_count.values())
     unique_words = len(word_count)
-    most_common_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)[:10]
+    most_common_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)[:10] # Sort words based on alphabetical order
     
     print(f"Total Words: {total_words}")
     print(f"Unique Words: {unique_words}")

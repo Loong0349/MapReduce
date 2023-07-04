@@ -25,7 +25,7 @@ def save_results_by_year(sorted_word_counts, year):
             file.write(f'{word}: {count}\n')
 
 if __name__ == '__main__':
-    input_folder = 'processed_headline/'  # Replace with the path to your input folder
+    input_folder = 'processed_headline/'  # Input folder
     for filename in os.listdir(input_folder):
         if filename.endswith('.txt'):
             year = filename[:-4]  # Extract the year from the filename
