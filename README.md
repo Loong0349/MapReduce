@@ -13,3 +13,6 @@ The results of the word count analysis are saved in the "mapred_results" folder.
 
 "others.py" is a Python code that performs a similar word frequency count using a non-MapReduce algorithm.
 The results of this Python code are saved in the "python_results" folder.
+
+The "analysis.py" file is used to analyze word frequencies and generate a word cloud based on those frequencies.
+The word cloud images are saved in the "cloudimg" folder.
